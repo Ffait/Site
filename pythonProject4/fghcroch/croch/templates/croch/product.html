@@ -1,0 +1,42 @@
+{% extends 'croch/base.html' %}
+
+{% block content %}
+
+<div class="row card text-center col-5 g-5 mx-auto text-bg-success">
+    <h1>{{product.name}}</h1>
+<p><img class="card-img-top" src="{{ product.photo.url }}" width="200" height="400" alt="{{ product.name }}">
+</p>
+{% if product.content %}
+<p class="card-text">{{product.content}}</p>
+{% else %}
+{% endif %}
+<p class="card-text">Цена: {{product.price}} руб.</p>
+{% if product.structure %}
+<p class="card-text">Состав: {{product.structure}}</p>
+{% else %}
+{% endif %}
+{% if product.thickness %}
+<p class="card-text">Толщина инструмента: {{product.thickness}} мм</p>
+{% else %}
+{% endif %}
+{% if product.tr_length %}
+<p class="card-text">Длина нити: {{product.tr_length}} м</p>
+{% else %}
+{% endif %}
+{% if product.material %}
+<p class="card-text">Материал: {{product.material}}</p>
+{% else %}
+{% endif %}
+{% if product.size %}
+<p class="card-text">Размер: {{product.size}} см</p>
+{% else %}
+{% endif %}
+{% if product.color %}
+<p class="card-text">Цвет: {{product.color}}</p>
+{% else %}
+{% endif %}
+<p class="card-text">Категория продукта: {{product.cat}}</p>
+<a href="#" class="btn btn-light">Добавить в корзину</a>
+
+</div>
+{% endblock %}

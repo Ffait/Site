@@ -1,0 +1,19 @@
+{% extends 'croch/base.html' %}
+
+{% block content %}
+<h1>{{title}}</h1>
+
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5 mx-auto">
+    {% for p in products %}
+    <div class="col">
+    <div class="card text-bg-success p-3 text-center">
+        <h4 class="card-title">{{p.name}}</h4>
+        <img class="card-img-top" src="{{ p.photo.url }}" width="200" height="300" alt="{{ p.name }}">
+        <p class="card-text">Цена {{p.price}} руб.</p>
+        <a href="{{ p.get_absolute_url }}" class="btn btn-light">О товаре...</a>
+        <hr>
+    </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
